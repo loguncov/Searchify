@@ -1,12 +1,12 @@
 ﻿#pragma once
-#include<string>
-#include<fstream>
-#include<vector>
-#include<map>
-#include<variant>
+#include <string>
+#include <fstream>
+#include <vector>
+#include <map>
+#include <variant>
 #include <iomanip>
 #include <regex>
-#include"syntax.h"
+#include "syntax.h"
 
 using Big_Map = std::map<string, std::map<string, std::variant<string, int, double>>>;
 using Map = std::map<string, std::variant<string, int, double>>;

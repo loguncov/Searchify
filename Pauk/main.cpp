@@ -14,6 +14,7 @@ int main() {
                             " password=" + par.get_value<std::string>("bd.password_bd"));
         // Загрузка начальных настроек из INI-файла
         ini.start_sayt = par.get_value<std::string>("pauk.start_sayt");
+        ini.path = par.get_value<std::string>("pauk.path");
         ini.port = std::to_string(par.get_value<int>("pauk.port"));
         ini.recursiya = par.get_value<int>("pauk.recursiya");
         // Создание объекта для парсинга и обработки сайтов

@@ -66,6 +66,12 @@ private:
     std::string Obrabotka_zaprosa(std::pair<std::string, std::string>GetPost_Poisk, pqxx::connection& bd);
 
 public:
+    Server() = delete;
+	Server(const Server&) = delete;
+	Server(const Server&&) = delete;
+	Server& operator=(const Server& other) = delete;
+	Server& operator=(const Server&& other) = delete;
+
     // Конструктор сервера
     Server(pqxx::connection& bd, const int port);
     

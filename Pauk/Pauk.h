@@ -66,5 +66,16 @@ public:
     Pauk& operator=(const Pauk&& other) = delete;
 
     Pauk(pqxx::connection& bd, const INI ini); // Конструктор с параметрами
-    ~Pauk(); // Деструктор
+    // Деструктор
+    ~Pauk() {
+		std::this_thread::sleep_for(std::chrono::seconds(recursiya*recursiya));
+		Stop_Pool_HTML = false;
+		for (auto& p : Pool_HTML)
+			p.join();
+		Stop_Pool_BD = false;
+		for (auto& p : Pool_BD)
+			p.join();
+		end = chrono::steady_clock::now();
+		std::cout << std::endl << "Vremya rabotyi Pauka seconds: " << chrono::duration_cast<chrono::seconds>(end - start_).count() << std::endl;
+	}
 };
