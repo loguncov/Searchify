@@ -21,7 +21,7 @@ link_directories($ENV{BOOST_ROOT}/stage/lib)
 add_subdirectory(libpqxx libpqxx-build) 
 
 # Создание исполняемого файла Diplom из исходных файлов
-add_executable (DiplomServer  main.cpp syntax.h Parser.h Server.h Server.cpp)
+add_executable(DiplomServer  main.cpp syntax.h Parser.h Server.h Server.cpp)
 
 # Линковка исполняемого файла с необходимыми библиотеками
 target_link_libraries(DiplomServer Boost::boost libcrypto_static pqxx)
