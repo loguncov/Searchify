@@ -15,7 +15,7 @@
 class Server {
 private:
     // Заголовок ответа сервера
-    std::wstring zagolovok_otvet = L"HTTP/1.1 200 OK\r\n\Content-Type: text/html\r\n\r\n";
+    std::wstring zagolovok_otvet = L"HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n";
     
     // Префикс HTML-страницы
     std::wstring stranica_prefix =

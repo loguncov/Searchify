@@ -30,6 +30,12 @@ class syntax {
         }        
     }
 
+    //Проверка алфавита
+    void abc(const string& str) {
+		for (const size_t& n : str)
+			if (n > 127) throw "Cинтаксическая ошибка в строке \"" + str + "\" неверный символ (рус)";
+	}
+
     // Проверка наличия квадратных скобок для секции
     bool skobki(const string& str) {
         for (const auto& x : str) {
